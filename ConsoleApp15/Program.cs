@@ -7,22 +7,30 @@ using System.Threading.Tasks;
 namespace ConsoleApp15
 {
     class Program
-    {
-       
+    {    
         
+
+
+
+
+
 
         static void Main(string[] args)
         {
 
 
+           
 
+                Date();
 
-            Date();
-
-            Entering();
-
+                Entering();
             Console.ReadKey();
+            
+
+
+
         }
+
         private static void MainMenu()
         {
 
@@ -49,7 +57,8 @@ namespace ConsoleApp15
             }
 
         }
-        private static void printNumber()
+
+        private static void PrintNumber()
         {
 
 
@@ -82,7 +91,7 @@ namespace ConsoleApp15
                 if (result == 3)
                 {
                     Console.Clear();
-                    printNumber();
+                    PrintNumber();
                 }
 
                 if (result == 4)
@@ -164,10 +173,11 @@ namespace ConsoleApp15
 
 
         }
+
         private static void Entering()
         {
 
-            string P = "0001";
+            string P = "+++";
             string U = "Mohamad";
             string User;
             string Pass;
@@ -208,6 +218,7 @@ namespace ConsoleApp15
 
 
         }
+
         private static void Welcome()
         {
 
@@ -222,14 +233,15 @@ namespace ConsoleApp15
             Console.WriteLine("1)Print Numbers");
             Console.WriteLine("2)Gussing Game ");
             Console.WriteLine("3)Age Game ");
-            Console.WriteLine("4)Exit");
+            Console.WriteLine("4)Back to MainMenu");
+            Console.WriteLine("5)Exit");
             Console.Write("Please chose a Number to Start the Game : ");
             int result = int.Parse(Console.ReadLine());
             if (result == 1)
             {
 
                 Console.Clear();
-                printNumber();
+                PrintNumber();
                 GameSecondMenu();
 
             }
@@ -250,175 +262,66 @@ namespace ConsoleApp15
             while (result == 4)
             {
                 Console.Clear();
-
-            }
-
-
-
-
-        }
-        private static void Sumeln()
-        {
-            int x, y, S;
-            Console.Write("Enter The First Number: ");
-            x = int.Parse(Console.ReadLine());
-            Console.Write("Enter The Second Number: ");
-            y = int.Parse(Console.ReadLine());
-            S = x + y;
-            Console.WriteLine(x + "+" + y + "=" + S);
-            Console.WriteLine("1)back to ToolsMenu ");
-            Console.WriteLine("2)back to MainMenu ");
-            Console.WriteLine("3)Try Again !");
-            Console.WriteLine("4)Exit");
-            string result = Console.ReadLine();
-            if (result == "1")
-            {
-                Console.Clear();
-                MathMenu();
-
-
-            }
-            if (result == "2")
-                Console.Clear();
-            MainMenu();
-            if (result == "3")
-            {
-                Console.Clear();
-                Sumeln();
-            }
-
-            if (result == "4")
-            {
-                Console.Clear();
-
-            }
-
-
-        }
-
-        private static void multiplication()
-
-        {
-            int x, y, S;
-            Console.Write("Enter The First Number: ");
-            x = int.Parse(Console.ReadLine());
-            Console.Write("Enter The Second Number: ");
-            y = int.Parse(Console.ReadLine());
-            S = x * y;
-            Console.WriteLine(x + "*" + y + "=" + S);
-            Console.WriteLine("1)back to ToolsMenu ");
-            Console.WriteLine("2)back to MainMenu ");
-            Console.WriteLine("3)Try Again !");
-            Console.WriteLine("4)Exit");
-            string result = Console.ReadLine();
-            if (result == "1")
-            {
-                Console.Clear();
-                MathMenu();
-
-
-            }
-            if (result == "2")
-            {
-                Console.Clear();
                 MainMenu();
+                
+
             }
-            if (result == "3")
+
+            while (result == 5)
             {
+               
                 Console.Clear();
-                multiplication();
+                
             }
 
-            if (result == "4")
-            {
-                Console.Clear();
 
-            }
-
-        }
-        private static void Divide()
-        {
-
-            double x, y, S;
-            Console.Write("Enter The First Number: ");
-            x = int.Parse(Console.ReadLine());
-            Console.Write("Enter The Second Number: ");
-            y = int.Parse(Console.ReadLine());
-            S = x / y;
-            Console.WriteLine(x + "/" + y + "=" + S);
-            SecondMathMenu();
-            string result = Console.ReadLine();
-            if (result == "1")
-            {
-                Console.Clear();
-                MathMenu();
-            }
-            if (result == "2")
-            {
-                Console.Clear();
-                MainMenu();
-            }
-            if (result == "3")
-            {
-                Console.Clear();
-                Divide();
-
-
-            }
-            if (result == "4")
-            {
-                Console.Clear();
-
-            }
-
-        }
+        }           
         private static void MathMenu()
         {
-
-            Console.WriteLine("1)Sumeln Tool ");
-            Console.WriteLine("2)Multiplication Tool  ");
-            Console.WriteLine("3)Divide Tool  ");
-            Console.WriteLine("4)The Area and Primeter  ");
-            Console.WriteLine("5)Back to MainMenu");
-            Console.WriteLine("6)Exit");
+           
+            Console.WriteLine("0)Quiz");
+            Console.WriteLine("1)Calculator ");
+            Console.WriteLine("2)The Area and Primeter  ");
+            Console.WriteLine("3)Back to MainMenu ");
+            Console.WriteLine("4)Exit  ");
             Console.Write("Choose The Number of the Tool : ");
+          
             string result = Console.ReadLine();
+            if (result == "0")
+            {
+                Console.Clear();
+                Quiz();
+            }
             if (result == "1")
             {
                 Console.Clear();
                 Console.WriteLine("----------------------");
-                Console.WriteLine("Sumeln Tool");
+                Console.WriteLine("The Calculator");
                 Console.WriteLine("----------------------");
-                Sumeln();
+                Calculator();
             }
             if (result == "2")
             {
                 Console.Clear();
                 Console.WriteLine("----------------------");
-                Console.WriteLine("Multiplication Tool");
+                Console.WriteLine("Area & Primeter");
                 Console.WriteLine("----------------------");
-                multiplication();
+                AreaAndPrimeter();
             }
             if (result == "3")
             {
                 Console.Clear();
-                Console.WriteLine("----------------------");
-                Console.WriteLine("Divide Tool");
-                Console.WriteLine("----------------------");
-                Divide();
+               
+                MainMenu();
             }
             if (result == "4")
             {
                 Console.Clear();
-               AreaAndPrimeter();
+               
             }
-            while (result == "5")
-            {
-                Console.Clear();
-                MainMenu();
-
-            }
+           
         }
+
         private static void Date ()
         {
             DateTime UserAge = DateTime.Now;
@@ -429,6 +332,7 @@ namespace ConsoleApp15
 
 
         }
+   
         private static void AgeGame()
         {
 
@@ -482,6 +386,7 @@ namespace ConsoleApp15
 
 
         }
+
         private static void GameSecondMenu()
         {
 
@@ -491,7 +396,8 @@ namespace ConsoleApp15
             Console.WriteLine("4)Exit");
            
         }
-        private static void square()
+
+        private static void Square()
         {
 
             Square mySquare = new Square();
@@ -515,7 +421,7 @@ namespace ConsoleApp15
             if (result == "3")
             {
                 Console.Clear();
-                square();
+                Square();
 
 
             }
@@ -528,7 +434,8 @@ namespace ConsoleApp15
 
 
         }
-        private static void rechtangle()
+
+        private static void Rectangle()
         {
             Rectangle myrectangel = new Rectangle();
             Console.Write("Enter the Length of one of the Rectangle Lines : ");
@@ -552,7 +459,7 @@ namespace ConsoleApp15
             if (result == "3")
             {
                 Console.Clear();
-                square();
+                Rectangle();
 
 
             }
@@ -567,6 +474,7 @@ namespace ConsoleApp15
 
 
         }
+
         private static void AreaAndPrimeter()
         {
             Console.WriteLine("1) Square");
@@ -576,20 +484,128 @@ namespace ConsoleApp15
             if (result==1)
             {
                 Console.Clear();
-                square();
+                Square();
             }
 
             if (result == 2)
             {
                 Console.Clear();
-                rechtangle();
+                Rectangle();
+            }
+
+        }
+
+        private static void Quiz()
+        {
+            Random Generation = new Random();
+           
+               
+            
+            int N1 = Generation.Next(1, 1000);
+            int N2 = Generation.Next(1, 1000);
+        
+                
+                
+            
+            
+                int result = (N1 + N2);
+                Console.WriteLine("Abouras is my Name,I am a Robot ^_^ and i will test you... \nFind the Answer if you can ! :");
+                Console.Write("Question : "+N1 + " + " + N2 + " =");
+                int Answer = int.Parse(Console.ReadLine());
+                int sub = result - Answer;
+                int sub2 = Answer - result;
+                if (Answer == result)
+                    Console.WriteLine("Your Answer is correct");
+                if (Answer < result)
+                    Console.WriteLine("The Answer is " + sub + " more ! =>" + result);
+                if (Answer > result)
+                    Console.WriteLine("The answer is " + sub2 + " less ! =>" + result);
+            SecondMathMenu();
+            string Result = Console.ReadLine();
+            if (Result == "1")
+            {
+                Console.Clear();
+                MathMenu();
+
+
+            }
+            if (Result == "2")
+            {
+                Console.Clear();
+                MainMenu();
+            }
+            if (Result == "3")
+            {
+                Console.Clear();
+                Quiz();
+            }
+
+            if (Result == "4")
+            {
+                Console.Clear();
+
+            }
+
+
+
+
+        }
+        private static void Calculator()
+        {
+
+            Console.Write("First Number:");
+            var N1 = double.Parse(Console.ReadLine());
+            Console.Write("The Opration(+,-,*,/) :");
+            var Sign = Console.ReadLine();
+            Console.Write("The Second Number :");
+            var N2 = double.Parse(Console.ReadLine());
+            var plus = N1 + N2;
+            var Minus = N1 - N2;
+            var Multi = N1 * N2;
+            var Divide = N1 / N2;
+            if (Sign == "+")
+                Console.WriteLine(N1 + "+" + N2 + "=" + plus);
+            if (Sign == "-")
+                Console.WriteLine(N1 + "-" + N2 + "=" + Minus);
+            if (Sign == "*")
+                Console.WriteLine(N1 + "*" + N2 + "=" + Multi);
+            if (Sign == "/")
+                Console.WriteLine(N1 + "/" + N2 + "=" + Divide);
+            SecondMathMenu();
+            string result = Console.ReadLine();
+            if (result == "1")
+            {
+                Console.Clear();
+                MathMenu();
+            }
+            if (result == "2")
+            {
+                Console.Clear();
+                MainMenu();
+            }
+            if (result == "3")
+            {
+                Console.Clear();
+                Calculator();
+
+
+            }
+            if (result == "4")
+            {
+                Console.Clear();
+
             }
 
         }
 
 
 
+       
 
 
-    }
+    }  
+    
+
+
+
 }
